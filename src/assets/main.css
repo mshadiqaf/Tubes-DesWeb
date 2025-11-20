@@ -3,30 +3,28 @@
 
 @theme {
   /* Untuk Primary Colors */
-  --color-primary-50: oklch(0.98 0.016 73.684);
-  --color-primary-100: oklch(0.954 0.038 75.164);
-  --color-primary-200: oklch(0.901 0.076 70.697);
-  --color-primary-300: oklch(0.837 0.128 66.29);
-  --color-primary-400: oklch(0.75 0.183 55.934);
-  --color-primary-500: oklch(0.705 0.213 47.604);
-  --color-primary-600: oklch(0.646 0.222 41.116);
-  --color-primary-700: oklch(0.553 0.195 38.402);
-  --color-primary-800: oklch(0.47 0.157 37.304);
-  --color-primary-900: oklch(0.408 0.123 38.172);
-  --color-primary-950: oklch(0.266 0.079 36.259);
+  --color-primary-50: oklch(96.94% 0.017 50.44);
+  --color-primary-100: oklch(91.57% 0.046 41.83);
+  --color-primary-200: oklch(84.33% 0.092 45.55);
+  --color-primary-300: oklch(77.89% 0.139 46.57);
+  --color-primary-400: oklch(71.51% 0.187 42.52);
+  --color-primary-500: oklch(65.59% 0.233 34.52);
+  --color-primary-600: oklch(55.60% 0.195 34.90);
+  --color-primary-700: oklch(45.14% 0.156 35.55);
+  --color-primary-800: oklch(34.04% 0.114 36.87);
+  --color-primary-900: oklch(22.01% 0.068 41.04);
 
   /* Secondary Colors */
-  --color-secondary-50: oklch(0.97 0.014 254.604);
-  --color-secondary-100: oklch(0.932 0.032 255.585);
-  --color-secondary-200: oklch(0.882 0.059 254.128);
-  --color-secondary-300: oklch(0.809 0.105 251.813);
-  --color-secondary-400: oklch(0.707 0.165 254.624);
-  --color-secondary-500: oklch(0.623 0.214 259.815);
-  --color-secondary-600: oklch(0.546 0.245 262.881);
-  --color-secondary-700: oklch(0.488 0.243 264.376);
-  --color-secondary-800: oklch(0.424 0.199 265.638);
-  --color-secondary-900: oklch(0.379 0.146 265.522);
-  --color-secondary-950: oklch(0.282 0.091 267.935);
+  --color-secondary-50: oklch(96.00% 0.021 241.35);
+  --color-secondary-100: oklch(88.74% 0.063 237.02);
+  --color-secondary-200: oklch(81.93% 0.104 237.47);
+  --color-secondary-300: oklch(75.54% 0.140 240.24);
+  --color-secondary-400: oklch(70.22% 0.168 244.31);
+  --color-secondary-500: oklch(66.02% 0.188 250.18);
+  --color-secondary-600: oklch(56.01% 0.158 249.80);
+  --color-secondary-700: oklch(45.53% 0.126 249.19);
+  --color-secondary-800: oklch(34.66% 0.091 247.12);
+  --color-secondary-900: oklch(22.57% 0.054 242.87);
 
   /* Tailwind CSS oklch colors */
   --color-red-50: oklch(0.971 0.013 17.38);

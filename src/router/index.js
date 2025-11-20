@@ -1,35 +1,35 @@
-import AboutView from "@/views/AboutView.vue";
-import FaqView from "@/views/FaqView.vue";
-import HomeView from "@/views/HomeView.vue";
-import ProductView from "@/views/ProductView.vue";
-import TestimonialView from "@/views/TestimonialView.vue";
+import AboutPage from "@/pages/AboutPage.vue";
+import FaqPage from "@/pages/FaqPage.vue";
+import HomePage from "@/pages/HomePage.vue";
+import ProductPage from "@/pages/ProductPage.vue";
+import TestimonialPage from "@/pages/TestimonialPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   { 
     path: '/',
-    name: 'HomeView',
-    component: HomeView,
+    name: 'HomePage',
+    component: HomePage,
   },
   { 
     path: '/products',
-    name: 'ProductView',
-    component: ProductView,
+    name: 'ProductPage',
+    component: ProductPage,
   },
   { 
     path: '/testimonials',
-    name: 'TestimonialView',
-    component: TestimonialView,
+    name: 'TestimonialPage',
+    component: TestimonialPage,
   },
   { 
     path: '/faq',
-    name: 'FaqView',
-    component: FaqView,
+    name: 'FaqPage',
+    component: FaqPage,
   },
   { 
     path: '/about',
-    name: 'AboutView',
-    component: AboutView,
+    name: 'AboutPage',
+    component: AboutPage,
   },
 ]
 
