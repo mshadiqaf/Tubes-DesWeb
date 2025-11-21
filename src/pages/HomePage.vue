@@ -1,14 +1,17 @@
 <script setup>
-import AppFooter from '@/components/layout/AppFooter.vue';
-import CTA from '@/sections/Home/CTA.vue';
-import Hero from '@/sections/Home/Hero.vue';
-import Highlight from '@/sections/Home/Highlight.vue';
-
+import AppFooter from "@/components/layout/AppFooter.vue";
+import BestSellersSection from "@/sections/Home/BestSellersSection.vue";
+import CategorySection from "@/sections/Home/CategorySection.vue";
+import CTASection from "@/sections/Home/CTASection.vue";
+import HeroSection from "@/sections/Home/HeroSection.vue";
+import HighlightSection from "@/sections/Home/HighlightSection.vue";
 </script>
 
 <template>
-  <Hero />
-  <Highlight />
-  <CTA />
+  <HeroSection />
+  <HighlightSection />
+  <BestSellersSection />
+  <CategorySection />
+  <CTASection />
   <AppFooter />
 </template>

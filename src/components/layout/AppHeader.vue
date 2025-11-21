@@ -4,56 +4,28 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <header
-    class="fixed z-50 flex w-full border-b-2 border-white/25 bg-white/65 backdrop-blur-lg"
-  >
+  <header class="fixed z-50 flex w-full border-b-2 border-white/25 bg-[#f5f5f5]/65 backdrop-blur-lg">
     <nav class="flex w-full justify-center">
-      <div
-        class="flex w-full flex-row items-center justify-between px-8"
-      >
+      <div class="flex w-full flex-row items-center justify-between px-8">
         <RouterLink to="/">
-          <img
-            class="size-16"
-            src="/src/assets/images/logo_hmif_store.png"
-            alt="Logo HMIF Store"
-          />
+          <img class="size-16" src="/src/assets/images/logo_hmif_store.png" alt="Logo HMIF Store" />
         </RouterLink>
         <div>
           <ul class="flex flex-row gap-6 text-xl">
             <li class="p-3">
-              <RouterLink
-                to="/"
-                class="hover:text-primary-500 font-normal transition-colors duration-300"
-                >Home</RouterLink
-              >
+              <RouterLink to="/" class="hover:text-primary-500 font-normal transition-colors duration-300">Home</RouterLink>
             </li>
             <li class="p-3">
-              <RouterLink
-                to="/products"
-                class="hover:text-primary-500 font-normal transition-colors duration-300"
-                >Products</RouterLink
-              >
+              <RouterLink to="/products" class="hover:text-primary-500 font-normal transition-colors duration-300">Products</RouterLink>
             </li>
             <li class="p-3">
-              <RouterLink
-                to="/testimonials"
-                class="hover:text-primary-500 font-normal transition-colors duration-300"
-                >Testimonials</RouterLink
-              >
+              <RouterLink to="/testimonials" class="hover:text-primary-500 font-normal transition-colors duration-300">Testimonials</RouterLink>
             </li>
             <li class="p-3">
-              <RouterLink
-                to="/faq"
-                class="hover:text-primary-500 font-normal transition-colors duration-300"
-                >FaQ</RouterLink
-              >
+              <RouterLink to="/faq" class="hover:text-primary-500 font-normal transition-colors duration-300">FaQ</RouterLink>
             </li>
             <li class="p-3">
-              <RouterLink
-                to="/about"
-                class="hover:text-primary-500 font-normal transition-colors duration-300"
-                >About Us</RouterLink
-              >
+              <RouterLink to="/about" class="hover:text-primary-500 font-normal transition-colors duration-300">About Us</RouterLink>
             </li>
           </ul>
         </div>
