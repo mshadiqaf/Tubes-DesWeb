@@ -1,5 +1,5 @@
 <template>
-  <section class="relative flex justify-center bg-white py-12">
+  <section class="relative flex justify-center bg-white">
     <div class="flex flex-col gap-12 px-6 py-12">
       <div class="flex flex-col items-center justify-center">
         <h4 class="text-primary-600 text-lg tracking-widest">HUBUNGI KAMI</h4>

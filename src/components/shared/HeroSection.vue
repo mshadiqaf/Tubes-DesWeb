@@ -12,8 +12,8 @@ const props = defineProps({
   <section class="relative flex h-[360px] items-center justify-center">
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: `url(${props.image})` }"></div>
     <div class="absolute inset-0 bg-black/75" />
-    <div class="flex w-full px-8 justify-center">
-      <h1 class="relative text-5xl font-medium text-white uppercase tracking-[24px]">
+    <div class="flex w-full justify-center px-8">
+      <h1 class="relative text-[3.5dvh] font-normal tracking-[24px] text-white uppercase italic">
         <slot />
       </h1>
     </div>

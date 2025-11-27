@@ -1,9 +1,17 @@
-<script setup lang="ts">
+<script setup>
 import { RouterView } from "vue-router";
-import NavBar from "./components/layout/AppHeader.vue";
+import AppHeader from "./components/layout/AppHeader.vue";
+import AppFooter from "./components/layout/AppFooter.vue";
 </script>
 
 <template>
-  <NavBar />
-  <RouterView />
+  <div class="flex min-h-screen flex-col">
+    <AppHeader />
+
+    <main class="flex-1">
+      <RouterView />
+    </main>
+
+    <AppFooter />
+  </div>
 </template>

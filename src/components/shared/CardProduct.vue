@@ -1,14 +1,18 @@
 <script setup>
+import { toRupiah } from "@/utils/currency.js";
+import { computed } from "vue";
+import AppButton from "../ui/AppButton.vue";
+import { ShoppingCart } from "lucide-vue-next";
 
 const props = defineProps({
   name: {
     type: String,
-    required: false,
+    required: true,
     default: "Product Name",
   },
   price: {
     type: Number,
-    required: false,
+    required: true,
     default: 0,
   },
   image: {
@@ -18,16 +22,20 @@ const props = defineProps({
   },
 });
 
+const formattedPrice = computed(() => toRupiah(props.price));
 </script>
 
 <template>
-  <div class="relative flex w-full flex-col items-center justify-center gap-4 max-w-lg">
-    <div class="bg-stone-200/50 p-12 rounded-lg aspect-square">
-      <img :src="props.image" alt="">
+  <div class="relative flex w-full max-w-lg flex-col items-center justify-center gap-4">
+    <div class="aspect-square rounded-lg bg-stone-200/50 p-20">
+      <img class="drop-shadow-xl" :src="props.image" alt="" />
     </div>
-    <div class="relative flex flex-row justify-between w-full">
-      <h3>{{ props.name }}</h3>
-      <h3>{{ props.price }}</h3>
+    <div class="relative flex w-full flex-row">
+      <div class="relative flex w-full flex-col justify-between">
+        <h3 class="text-xl font-medium">{{ props.name }}</h3>
+        <h3>{{ formattedPrice }}</h3>
+      </div>
+      <AppButton variant="primary" size="lg"> Add to Cart </AppButton>
     </div>
   </div>
 </template>

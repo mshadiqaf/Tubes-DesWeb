@@ -1,5 +1,4 @@
 <script setup>
-import AppFooter from "@/components/layout/AppFooter.vue";
 import BestSellersSection from "@/sections/Home/BestSellersSection.vue";
 import CategorySection from "@/sections/Home/CategorySection.vue";
 import CTASection from "@/sections/Home/CTASection.vue";
@@ -13,5 +12,4 @@ import HighlightSection from "@/sections/Home/HighlightSection.vue";
   <BestSellersSection />
   <CategorySection />
   <CTASection />
-  <AppFooter />
 </template>

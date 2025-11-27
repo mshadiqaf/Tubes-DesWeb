@@ -1,16 +1,12 @@
 <template>
-  <footer class="from-secondary-400 to-secondary-700 relative flex w-full justify-center overflow-hidden bg-linear-to-br px-8 py-10">
-    <div class="relative flex w-full max-w-7xl flex-col justify-between gap-12">
+  <footer class="from-secondary-300 to-secondary-700 relative flex w-full justify-center overflow-hidden bg-linear-to-br px-8 py-8">
+    <div class="relative flex w-full max-w-7xl flex-col justify-between gap-8">
       <div class="flex flex-row justify-between gap-8">
-        <div class="flex flex-col gap-4">
-          <div class="flex h-14 w-fit flex-row gap-2">
-            <img class="object-cover" src="/src/assets/images/logo_itk_horizontal.png" alt="Logo ITK" />
-            <img src="/src/assets/images/logo_hmif_itk_white.png" alt="Logo HMIF ITK" />
-          </div>
-          <div class="flex max-w-lg flex-col gap-2">
-            <h1 class="text-7xl font-medium tracking-tight text-white">HMIF Store</h1>
-            <p class="w-full font-normal text-wrap text-white">Platform resmi merchandise Himpunan Mahasiswa Informatika ITK. Dikelola oleh Badan Usaha Milik Himpunan (BUMH) untuk mendukung kemandirian dan kegiatan organisasi.</p>
-          </div>
+        <div class="flex max-w-lg flex-col gap-2">
+          <h1 class="text-8xl font-medium tracking-tight text-white">HMIF Store</h1>
+          <p class="text-md w-full font-normal tracking-wide text-wrap text-white">
+            Platform resmi merchandise Himpunan Mahasiswa Informatika ITK. Dikelola oleh Badan Usaha Milik Himpunan (BUMH) untuk mendukung kemandirian dan kegiatan organisasi.
+          </p>
         </div>
         <div class="flex flex-row gap-16">
           <div class="relative flex flex-col gap-4">
@@ -49,7 +45,13 @@
           </div>
         </div>
       </div>
-      <div class="flex w-full justify-center text-center text-base font-medium text-white uppercase">
+      <div class="flex w-full flex-col items-center justify-center gap-8 border-t border-white/20 pt-8 text-center text-base font-medium text-white uppercase">
+        <div class="flex h-12 w-fit flex-row gap-4">
+          <img class="object-cover" src="/src/assets/images/logo_itk_horizontal.png" alt="Logo ITK" />
+          <img src="/src/assets/images/logo_hmif_itk_white.png" alt="Logo HMIF ITK" />
+          <img src="/src/assets/images/logo_kabinet_impact.png" alt="Logo Kabinet IMPACT" />
+          <img src="/src/assets/images/logo_bumh.png" alt="Logo Badan Usaha Milik Himpunan" />
+        </div>
         <p>
           © 2025 HMIF Store — All Rights Reserved.<br />
           Created by Muhammad Shadiq Al-Fatiy from IF07

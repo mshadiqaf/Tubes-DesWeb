@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
 const parallaxOffset = ref(0);
-const heroSection = ref<HTMLElement | null>(null);
+const heroSection = (ref < HTMLElement) | (null > null);
 
 const handleScroll = () => {
   if (!heroSection.value) return;
@@ -27,8 +27,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="heroSection" class="relative flex min-h-dvh justify-center p-[4dvh] pt-17">
-    <div class="relative flex min-h-dvh w-full max-w-[1920px] flex-col justify-between overflow-hidden rounded-[8dvh] px-[3dvw] py-[3.5dvh]">
+  <section ref="heroSection" class="relative flex min-h-dvh justify-center p-[2dvh] pt-17">
+    <div class="relative flex min-h-dvh w-full flex-col justify-between overflow-hidden rounded-[15dvh] corner-squircle px-[3dvw] py-[3.5dvh]">
       <div
         class="absolute inset-0 bg-[url(@/assets/images/bg_hero_1.png)] bg-cover bg-center"
         :style="{
@@ -39,10 +39,10 @@ onUnmounted(() => {
 
       <div class="absolute inset-0 bg-black/50"></div>
 
-      <div class="relative z-10 flex flex-col text-right text-[5dvw] leading-[110%] font-medium tracking-tight text-nowrap text-white">
+      <div class="relative z-10 flex flex-col text-right text-[5dvw] leading-[110%] font-normal tracking-tight text-nowrap text-white">
         <h1>
           Lebih dari Sekadar
-          <span class="font-normal italic">Merchandise.</span> <br />
+          <span class="font-medium italic">Merchandise.</span> <br />
           Ini tentang rasa memiliki.
         </h1>
       </div>
