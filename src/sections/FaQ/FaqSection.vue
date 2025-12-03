@@ -10,7 +10,7 @@ const toggle = (sec, idx) => {
 </script>
 
 <template>
-  <section class="relative flex justify-center w-full px-12 py-16">
+  <section class="relative flex w-full justify-center px-12 py-16">
     <div class="relative grid w-full max-w-[1440px] gap-12 lg:grid-cols-2 lg:gap-16">
       <div v-for="(section, secIndex) in faqs" :key="secIndex" class="flex flex-col gap-6">
         <h3 class="text-4xl font-medium">{{ section.title }}</h3>

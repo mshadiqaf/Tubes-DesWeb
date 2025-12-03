@@ -2,7 +2,7 @@
 import { toRupiah } from "@/utils/currency.js";
 import { computed } from "vue";
 import AppButton from "../ui/AppButton.vue";
-import { ShoppingCart } from "lucide-vue-next";
+import { ArrowUpRight, ShoppingCart } from "lucide-vue-next";
 
 const props = defineProps({
   name: {
@@ -35,7 +35,9 @@ const formattedPrice = computed(() => toRupiah(props.price));
         <h3 class="text-xl font-medium">{{ props.name }}</h3>
         <h3>{{ formattedPrice }}</h3>
       </div>
-      <AppButton variant="primary" size="lg"> Add to Cart </AppButton>
+      <div class="flex gap-2">
+        <AppButton variant="secondary" size="md" icon-position="right"> Lihat Detail </AppButton>
+      </div>
     </div>
   </div>
 </template>
