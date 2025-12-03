@@ -12,7 +12,7 @@ export const products = [
     name: "Pakaian Dinas Harian (PDH)",
     description: "Lorem Ipsum",
     price: 180000,
-    imagePath: "/src/assets/images/jahim_depan.png",
+    imagePath: "/src/assets/images/bg_category_apparels.png",
     category: "Apparel",
   },
   {

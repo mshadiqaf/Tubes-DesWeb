@@ -1,6 +1,7 @@
 import AboutPage from "@/pages/AboutPage.vue";
 import FaqPage from "@/pages/FaqPage.vue";
 import HomePage from "@/pages/HomePage.vue";
+import ProductDetailPage from "@/pages/ProductDetailPage.vue";
 import ProductPage from "@/pages/ProductPage.vue";
 import TestimonialPage from "@/pages/TestimonialPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -15,6 +16,12 @@ const routes = [
     path: "/products",
     name: "ProductPage",
     component: ProductPage,
+  },
+  {
+    path: "/products/:id",
+    name: "ProductDetailPage",
+    component: ProductDetailPage,
+    props: true,
   },
   {
     path: "/testimonials",
