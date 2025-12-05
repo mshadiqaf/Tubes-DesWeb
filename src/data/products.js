@@ -6,6 +6,7 @@ export const products = [
     price: 250000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const products = [
     price: 180000,
     imagePath: "/src/assets/images/bg_category_apparels.png",
     category: "Apparel",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const products = [
     price: 120000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
+    sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const products = [
     price: 150000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
   },
   {
     id: 5,
