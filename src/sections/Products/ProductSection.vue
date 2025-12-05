@@ -62,7 +62,6 @@ onUnmounted(() => {
             <span class="from-muted-foreground/50 to-muted-foreground/0 block h-px w-full bg-linear-to-l" /> Press Ctrl + Shift + F to search
           </p>
           <SearchBar ref="searchBarRef" :modelValue="searchQuery" @update:modelValue="($event) => (searchQuery = $event)" />
-          <p>Searching Query : {{ searchQuery }}</p>
         </div>
       </div>
       <div class="relative flex flex-1 flex-col items-center justify-center gap-8">
