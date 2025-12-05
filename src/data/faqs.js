@@ -1,7 +1,7 @@
 export const faqs = [
   {
     title: "General FAQs",
-    description: "Everything you need to know about the product and how it works. Can't find an answer? Chat to our team.",
+    description: "Lorem Ipsum",
     items: [
       {
         question: "Is there a free trial available?",
@@ -31,7 +31,7 @@ export const faqs = [
   },
   {
     title: "Billing FAQs",
-    description: "Everything you need to know about billing and invoices. Can't find an answer? Chat to our team.",
+    description: "Lorem Ipsum",
     items: [
       {
         question: "Is it a one-time payment?",
