@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const parallaxOffset = ref(0);
-const heroSection = (ref < HTMLElement) | (null > null);
+const heroSection = ref(null);
 
 const handleScroll = () => {
   if (!heroSection.value) return;
@@ -28,7 +28,7 @@ onUnmounted(() => {
 
 <template>
   <section ref="heroSection" class="relative flex min-h-dvh justify-center p-[2dvh] pt-17">
-    <div class="relative flex min-h-dvh w-full flex-col justify-between overflow-hidden rounded-[15dvh] corner-squircle px-[3dvw] py-[3.5dvh]">
+    <div class="corner-squircle relative flex min-h-dvh w-full flex-col justify-between overflow-hidden rounded-[15dvh] px-[3dvw] py-[3.5dvh]">
       <div
         class="absolute inset-0 bg-[url(@/assets/images/bg_hero_1.png)] bg-cover bg-center"
         :style="{
