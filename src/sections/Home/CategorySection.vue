@@ -33,7 +33,7 @@ const categories = [
       </div>
       <p class="max-w-2xl text-xl leading-[150%] font-normal text-black/50">Bukan sekadar tempat membeli merchandise — HMIF Store adalah bagian dari perjalananmu sebagai Informatics People.</p>
     </div>
-    <div class="relative grid min-h-[720px] w-full grid-cols-2">
+    <div class="relative grid min-h-[720px] w-full grid-cols-2 gap-0.5">
       <CardCategory v-for="(category, index) in categories" :to="category.to" :key="index" :image="category.image_url" :name="category.name" :description="category.description" :class="index === 0 ? 'row-span-2' : ''" />
     </div>
   </section>
