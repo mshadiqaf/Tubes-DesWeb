@@ -29,7 +29,7 @@ const props = defineProps({
     default: "Category",
   },
   sizes: {
-    type: [],
+    type: Array,
   },
 });
 
