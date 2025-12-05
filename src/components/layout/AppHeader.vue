@@ -10,7 +10,7 @@ import { RouterLink } from "vue-router";
         <RouterLink to="/">
           <img class="size-16" src="/src/assets/images/logo_hmif_store.png" alt="Logo HMIF Store" />
         </RouterLink>
-        <ul class="flex w-2/5 flex-row justify-between text-xl">
+        <ul class="flex flex-row gap-12 text-xl">
           <li class="p-3">
             <RouterLink to="/" class="hover:text-primary-500 font-normal transition-all duration-300 hover:tracking-wider">Home</RouterLink>
           </li>
