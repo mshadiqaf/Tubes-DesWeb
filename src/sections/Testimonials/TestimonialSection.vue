@@ -21,11 +21,11 @@ const secondHalf = testimonials.slice(half);
       </div>
     </div>
     <!-- Marquee Container -->
-    <div class="relative flex flex-col justify-center gap-12 w-full mask-x-from-75% mask-x-to-100% py-12">
-      <div class="animate-walking-card relative justify-center flex w-max min-w-full gap-x-10">
+    <div class="relative flex w-full flex-col justify-center gap-12 mask-x-from-75% mask-x-to-100% py-12">
+      <div class="animate-walking-card relative flex w-max min-w-full justify-center gap-x-10 ">
         <TestimonialCard v-for="(testimoni, index) in [...firstHalf, ...firstHalf]" :key="index" v-bind="testimoni" class="shrink-0" />
       </div>
-      <div class="animate-walking-card-reverse relative justify-end flex w-max min-w-full gap-x-10">
+      <div class="animate-walking-card-reverse relative flex w-max min-w-full justify-end gap-x-10">
         <TestimonialCard v-for="(testimoni, index) in [...secondHalf, ...secondHalf]" :key="index" v-bind="testimoni" class="shrink-0" />
       </div>
     </div>

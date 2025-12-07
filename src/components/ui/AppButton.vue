@@ -34,10 +34,10 @@ const variants = {
 };
 
 const sizes = {
-  sm: "px-2 py-1 text-sm",
-  md: "px-3 py-1.5 text-base",
-  lg: "px-4 py-2.5 text-lg",
-  xl: "px-5 py-3.5 text-xl",
+  sm: "px-2 py-1 text-base",
+  md: "px-3 py-2 text-lg",
+  lg: "px-4 py-3 text-xl",
+  xl: "px-6 py-4 text-2xl",
 };
 
 const classes = computed(() => `${base} ${variants[props.variant]} ${sizes[props.size]}`);

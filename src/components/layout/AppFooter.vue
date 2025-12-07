@@ -10,7 +10,7 @@ const categories = [...new Set(products.map((p) => p.category))];
       <div class="flex flex-row justify-between gap-8">
         <div class="flex max-w-lg flex-col gap-2">
           <h1 class="text-8xl font-medium tracking-tight text-white">HMIF Store</h1>
-          <p class="text-md w-full font-normal tracking-wide text-wrap text-white">
+          <p class="text-base w-full font-normal tracking-wide text-wrap text-white">
             Platform resmi merchandise Himpunan Mahasiswa Informatika ITK. Dikelola oleh Badan Usaha Milik Himpunan (BUMH) untuk mendukung kemandirian dan kegiatan organisasi.
           </p>
         </div>

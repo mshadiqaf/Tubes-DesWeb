@@ -1,6 +1,12 @@
 <script setup>
+import { ref } from "vue";
 import { ShoppingCart } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
+import CartDialog from "@/components/layout/CartDialog.vue";
+
+const emit = defineEmits(['show-dialog']);
+const showDialog = () => emit('show-dialog');
+
 </script>
 
 <template>
@@ -28,7 +34,7 @@ import { RouterLink } from "vue-router";
           </li>
         </ul>
         <div>
-          <button class="flex cursor-pointer items-center justify-center">
+          <button @click="showDialog" class="flex cursor-pointer items-center justify-center">
             <ShoppingCart :size="32" />
           </button>
         </div>
