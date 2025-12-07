@@ -3,7 +3,7 @@ import AppButton from "@/components/ui/AppButton.vue";
 </script>
 
 <template>
-  <section class="relative flex h-dvh justify-center">
+  <section class="relative flex justify-center py-12">
     <div class="relative grid w-full max-w-[1920px] grid-cols-2 items-center overflow-hidden p-8">
       <div class="relative flex min-h-[640px] w-full justify-center">
         <div class="relative w-full max-w-xl">

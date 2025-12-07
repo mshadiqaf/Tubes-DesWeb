@@ -11,32 +11,38 @@ const routes = [
     path: "/",
     name: "HomePage",
     component: HomePage,
+    meta: { label: "Home" },
   },
   {
     path: "/products",
     name: "ProductPage",
     component: ProductPage,
+    meta: { label: "Products" },
   },
   {
     path: "/products/:id",
     name: "ProductDetailPage",
     component: ProductDetailPage,
     props: true,
+    meta: { label: "Products" },
   },
   {
     path: "/testimonials",
     name: "TestimonialPage",
     component: TestimonialPage,
+    meta: { label: "Testimonials" },
   },
   {
     path: "/faq",
     name: "FaqPage",
     component: FaqPage,
+    meta: { label: "FaQ" },
   },
   {
     path: "/about",
     name: "AboutPage",
     component: AboutPage,
+    meta: { label: "About Us" },
   },
 ];
 

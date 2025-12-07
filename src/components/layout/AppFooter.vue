@@ -1,3 +1,9 @@
+<script setup>
+import { products } from "@/data/products";
+
+const categories = [...new Set(products.map((p) => p.category))];
+</script>
+
 <template>
   <footer class="from-secondary-300 to-secondary-700 relative flex w-full justify-center overflow-hidden bg-linear-to-br px-8 py-8">
     <div class="relative flex w-full max-w-7xl flex-col justify-between gap-8">
@@ -12,14 +18,8 @@
           <div class="relative flex flex-col gap-4">
             <h2 class="flex text-base font-bold text-white uppercase">Belanja</h2>
             <ul class="flex flex-col gap-1 text-3xl font-normal">
-              <li>
-                <RouterLink to="/" class="text-white transition-colors duration-300 hover:text-white/80">Apparels</RouterLink>
-              </li>
-              <li>
-                <RouterLink to="/" class="text-white transition-colors duration-300 hover:text-white/80">Accesories</RouterLink>
-              </li>
-              <li>
-                <RouterLink to="/" class="text-white transition-colors duration-300 hover:text-white/80">Others</RouterLink>
+              <li v-for="category in categories">
+                <RouterLink :to="{ path: '/products', query: { category: category } }" class="text-white transition-colors duration-300 hover:text-white/80">{{ category }}</RouterLink>
               </li>
             </ul>
           </div>
@@ -56,6 +56,9 @@
           © 2025 HMIF Store — All Rights Reserved.<br />
           Created by Muhammad Shadiq Al-Fatiy from IF07
         </p>
+        <!-- <div class="text-[50dvw]">
+          <h1>HMIF STORE</h1>
+        </div> -->
       </div>
     </div>
     <div class="absolute -bottom-1/12 -left-12">

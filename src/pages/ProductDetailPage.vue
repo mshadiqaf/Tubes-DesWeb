@@ -1,11 +1,11 @@
 <script setup>
-import ProductDetailSection from '@/sections/Products/Details/ProductDetailSection.vue';
+import ProductDetailSection from "@/sections/Products/Details/ProductDetailSection.vue";
 
 const props = defineProps({
-  id: String
-})
+  id: String,
+});
 </script>
 
 <template>
-  <ProductDetailSection :productId="props.id"/>
+  <ProductDetailSection :productId="props.id" />
 </template>

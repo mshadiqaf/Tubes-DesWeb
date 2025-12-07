@@ -23,7 +23,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="corner-squircle relative flex aspect-11/12 max-w-md min-w-sm flex-col items-end justify-end overflow-hidden rounded-[36px] border bg-cover bg-position-[center_30%] bg-no-repeat shadow-xl"
+    class="corner-squircle relative flex aspect-11/12 max-w-md min-w-sm flex-col items-end justify-end overflow-hidden rounded-3xl border bg-cover bg-position-[center_30%] bg-no-repeat shadow-xl"
     :style="{ backgroundImage: `url(${props.image})` }"
   >
     <div class="relative z-20 flex flex-col gap-8 p-6">

@@ -5,8 +5,8 @@ import { RouterLink } from "vue-router";
 const props = defineProps({
   variant: {
     type: String,
-    default: "Primary",
-    validator: (val) => ["primary", "ghost", "glass"].includes(val),
+    default: "primary",
+    validator: (val) => ["primary", "secondary", "ghost", "glass"].includes(val),
   },
   size: {
     type: String,
@@ -24,12 +24,12 @@ const props = defineProps({
   disabled: Boolean,
 });
 
-const base = "flex w-fit h-fit rounded-full font-medium flex-row items-center justify-center cursor-pointer gap-2 transition-colors whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed";
+const base = "flex w-fit h-fit rounded-full font-medium flex-row items-center justify-center cursor-pointer gap-2 duration-300 transition-all whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed";
 
 const variants = {
-  primary: "bg-primary-500 hover:bg-primary-600 text-white",
-  secondary: "bg-transparent border-primary-500 border text-primary-500 font-normal hover:bg-primary-500 hover:text-white",
-  ghost: "border border-white/25 bg-white/25 text-white backdrop-blur-lg hover:border-white/50 hover:bg-white/30",
+  primary: "bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white shadow-lg shadow-primary-500/10 hover:shadow-lg hover:shadow-primary-500/25 duration-300",
+  secondary: "bg-transparent border-primary-500 border-2 text-primary-500 font-normal hover:bg-primary-50 active:bg-primary-100",
+  ghost: "border text-muted-foreground",
   glass: "border border-white/25 bg-white/25 text-white backdrop-blur-lg hover:border-white/50 hover:bg-white/30",
 };
 

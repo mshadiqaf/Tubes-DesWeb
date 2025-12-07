@@ -1,14 +1,28 @@
 <script setup>
-import CardProduct from "@/components/shared/CardProduct.vue";
+import ProductCard from "@/components/shared/ProductCard.vue";
 import CategoryTab from "@/components/ui/CategoryTab.vue";
 import SearchBar from "@/components/ui/SearchBar.vue";
 import { products } from "@/data/products";
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
+const route = useRoute();
+const router = useRouter();
 const searchBarRef = ref(null);
 
-const selectedCategory = ref("All");
+const selectedCategory = ref(route.query.category || "All");
 const searchQuery = ref("");
+
+watch(
+  () => route.query.category,
+  (newCategory) => {
+    if (newCategory) {
+      selectedCategory.value = newCategory;
+    } else {
+      selectedCategory.value = "All";
+    }
+  },
+);
 
 const filteredProducts = computed(() => {
   let result = products;
@@ -28,7 +42,14 @@ const filteredProducts = computed(() => {
 });
 
 const handleCategoryChange = (category) => {
-  selectedCategory.value = category;
+  if (category === "All") {
+    // Remove the category query param when "All" is selected
+    const query = { ...route.query };
+    delete query.category;
+    router.push({ query });
+  } else {
+    router.push({ query: { ...route.query, category } });
+  }
 };
 
 console.log(filteredProducts.value);
@@ -51,7 +72,7 @@ onUnmounted(() => {
 
 <template>
   <section class="relative flex w-full flex-col items-center justify-center">
-    <div class="relative flex w-full max-w-[1660px] flex-col justify-center gap-12 p-6 sm:p-8 md:p-12">
+    <div class="relative flex w-full max-w-[1920px] flex-col justify-center gap-12 p-6 sm:p-8 md:p-12">
       <div class="relative flex flex-row items-end justify-between gap-4">
         <div class="relative flex flex-col items-start justify-start gap-6">
           <h2 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">Shop by Category</h2>
@@ -66,7 +87,7 @@ onUnmounted(() => {
       </div>
       <div class="relative flex flex-1 flex-col items-center justify-center gap-8">
         <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-3">
-          <CardProduct v-for="(product, index) in filteredProducts" :id="product.id" :key="index" :name="product.name" :imagePath="product.imagePath" :price="product.price" :category="product.category" :sizes="product.sizes" />
+          <ProductCard v-for="(product, index) in filteredProducts" :id="product.id" :key="index" :name="product.name" :imagePath="product.imagePath" :price="product.price" :category="product.category" :sizes="product.sizes" />
         </div>
       </div>
     </div>

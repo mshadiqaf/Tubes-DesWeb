@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Jaket Himpunan (Jahim)",
-    description: "Lorem Ipsum",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, modi sit dolore, illum nam magnam recusandae odit enim itaque atque nulla. Debitis atque ipsam commodi a. Incidunt itaque officiis earum!",
     price: 250000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
