@@ -3,8 +3,8 @@ import SectionHeader from "@/components/ui/SectionHeader.vue";
 </script>
 
 <template>
-  <section class="relative flex justify-center py-24">
-    <div class="relative flex w-full max-w-[1920px] flex-col items-center justify-center gap-8 text-center">
+  <section class="relative flex justify-center py-12 md:py-24 px-8">
+    <div class="relative flex w-full max-w-[1920px] flex-col items-center justify-center gap-6 px-4 text-center md:gap-8">
       <div class="flex flex-col gap-4">
         <SectionHeader>
           <template #header>Tentang Kami</template>

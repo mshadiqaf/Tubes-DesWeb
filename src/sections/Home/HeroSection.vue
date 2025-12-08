@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import AppButton from "@/components/ui/AppButton.vue";
 
 const parallaxOffset = ref(0);
 const heroSection = ref(null);
@@ -50,13 +51,8 @@ onUnmounted(() => {
       <div class="relative z-10 flex max-w-[45dvw] flex-col gap-[2dvh] text-balance">
         <p class="w-full text-[1.75dvw] leading-[150%] text-white">Official Merchandise Store Held by Badan Usaha Milik Himpunan, Himpunan Mahasiswa Informatika Institut Teknologi Kalimantan.</p>
         <div class="flex flex-row gap-[1dvw]">
-          <RouterLink
-            to="/about"
-            class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/25 px-[1.5dvw] py-[1.75dvh] text-[3dvh] font-medium text-white backdrop-blur-xs transition-colors hover:border-white/50 hover:bg-white/30"
-          >
-            Kenali Kami
-          </RouterLink>
-          <RouterLink to="/products" class="bg-primary-500 hover:bg-primary-600 rounded-full px-[1.5dvw] py-[1.75dvh] text-[3dvh] font-medium text-white transition-colors"> Belanja Skuy </RouterLink>
+          <AppButton to="/about" variant="secondary" size="xl" class="border-white/25 bg-white/25 text-white backdrop-blur-xs hover:border-white/50 hover:bg-white/30"> Kenali Kami </AppButton>
+          <AppButton to="/products" variant="primary" size="xl"> Belanja Skuy </AppButton>
         </div>
       </div>
     </div>

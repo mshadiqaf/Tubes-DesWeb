@@ -48,12 +48,16 @@ const handleDecrement = (item) => {
 </script>
 
 <template>
-  <dialog ref="dialogRef" class="m-auto h-fit w-full max-w-lg self-center justify-self-center overflow-hidden rounded-4xl border bg-white shadow-xl backdrop:bg-black/50 backdrop:backdrop-blur-[2px]" @click="closeFromEvent">
+  <dialog
+    ref="dialogRef"
+    class="m-auto h-fit w-full max-w-full self-center justify-self-center overflow-hidden rounded-none border bg-white shadow-xl backdrop:bg-black/50 backdrop:backdrop-blur-[2px] md:max-w-lg md:rounded-4xl"
+    @click="closeFromEvent"
+  >
     <div class="flex flex-col">
       <div class="flex items-center justify-between border-b border-gray-100 p-6">
-        <h2 class="flex items-center gap-2 text-4xl font-medium">
+        <h2 class="flex items-center gap-2 text-2xl font-medium md:text-4xl">
           Shopping Cart
-          <span class="bg-primary-50 text-primary-600 border-primary-100 flex h-fit w-fit items-center justify-center rounded-full border px-2 py-0.5 text-base font-medium">{{ totalItems }} items</span>
+          <span class="bg-primary-50 text-primary-600 border-primary-100 flex h-fit w-fit items-center justify-center rounded-full border px-2 py-0.5 text-sm font-medium md:text-base">{{ totalItems }} items</span>
         </h2>
         <button @click="closeDialog" class="text-muted-foreground bg-muted hover:bg-muted-foreground/15 hover:text-primary-600 outline-primary-500 cursor-pointer rounded-full p-2 transition-colors duration-300">
           <X class="h-5 w-5" />
@@ -73,8 +77,8 @@ const handleDecrement = (item) => {
           <div class="flex w-full flex-col gap-4">
             <div class="flex w-full flex-row gap-1">
               <div class="flex w-full flex-col">
-                <h2 class="line-clamp-1 text-xl font-medium">{{ item.name }}</h2>
-                <h4 class="text-muted-foreground text-sm tracking-wider">Size: {{ item.size }}</h4>
+                <h2 class="line-clamp-1 text-base font-medium md:text-xl">{{ item.name }}</h2>
+                <h4 class="text-muted-foreground text-xs tracking-wider md:text-sm">Size: {{ item.size }}</h4>
                 <span class="text-muted-foreground/75 text-xs">{{ getAvailableStock(item) }} available in stock</span>
               </div>
               <button @click="removeItem(item)" class="text-muted-foreground/50 flex h-fit cursor-pointer items-center justify-center p-0.5 transition-colors duration-300 hover:text-red-500">

@@ -67,17 +67,14 @@ const isSizeOutOfStock = (size) => {
 
 const productStockStatus = computed(() => {
   if (props.sizes && props.sizes.length > 0) {
-    // Calculate total stock across all sizes
     const totalStock = props.sizes.reduce((total, size) => {
       return total + getSizeStock(size);
     }, 0);
 
-    // Determine status based on total stock
     if (totalStock === 0) return "out-of-stock";
     if (totalStock < 5) return "low-stock";
     return "in-stock";
   }
-  // For products without sizes, get stock status directly
   return getStockStatus(props.id);
 });
 </script>
@@ -106,8 +103,8 @@ const productStockStatus = computed(() => {
           @click.prevent.stop="handleAddToCart(props.sizes?.[0])"
           :class="['text-muted-foreground border-muted-foreground absolute bottom-4 left-4 cursor-pointer rounded-sm transition-all duration-300 hover:scale-130', sizes ? 'group-hover/size:opacity-0' : 'opacity-100']"
         />
-        <CategoryBadge :category="props.category" class="absolute top-4 left-4" />
-        <StockBadge :stockStatus="productStockStatus" class="absolute top-4 right-4" />
+        <CategoryBadge :category="props.category" class="absolute z-500 top-4 left-4" />
+        <StockBadge :stockStatus="productStockStatus" class="absolute top-4 z-500 right-4" />
         <img class="max-h-full max-w-full object-contain drop-shadow-xl transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-105 group-hover:drop-shadow-2xl" :src="props.imagePath" alt="" />
       </div>
     </RouterLink>

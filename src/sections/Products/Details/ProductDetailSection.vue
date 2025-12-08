@@ -73,32 +73,32 @@ const handleBuyNow = () => {
 </script>
 
 <template>
-  <section v-if="product" class="relative flex w-full flex-col items-center justify-center py-24">
+  <section v-if="product" class="relative flex w-full flex-col items-center justify-center py-12 md:py-24">
     <span class="bg-muted-foreground/25 w-full border-t mask-x-from-85% mask-x-to-100%" />
-    <div class="relative grid w-full grid-cols-[3fr_2fr] justify-center gap-12 px-12">
-      <div class="relative flex items-center justify-center border-r px-8 py-8">
+    <div class="relative grid w-full grid-cols-1 justify-center gap-6 px-4 md:gap-12 md:px-12 lg:grid-cols-[3fr_2fr]">
+      <div class="relative flex items-center justify-center px-4 py-4 md:px-8 md:py-8 lg:border-r">
         <div class="relative flex aspect-square max-w-2xl items-center justify-center overflow-hidden rounded-lg bg-stone-200/50 p-12">
           <img :src="product.imagePath" alt="{{ product.name }} Image" class="max-h-full max-w-full object-contain drop-shadow-xl transition-all duration-500 ease-out" />
         </div>
       </div>
-      <div class="sticky top-12 flex h-full w-full flex-col gap-8 py-12">
+      <div class="top-12 flex h-full w-full flex-col gap-6 py-6 md:gap-8 md:py-12 lg:sticky">
         <BackButton />
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-2">
-            <h1 class="text-4xl font-medium">{{ product.name }}</h1>
-            <p class="text-muted-foreground text-2xl font-medium">{{ toRupiah(product.price) }}</p>
+            <h1 class="text-2xl font-medium md:text-3xl lg:text-4xl">{{ product.name }}</h1>
+            <p class="text-muted-foreground text-xl font-medium md:text-2xl">{{ toRupiah(product.price) }}</p>
           </div>
           <p class="text-muted-foreground/75 text-sm font-normal tracking-wide">{{ product.description }}</p>
         </div>
 
-        <div class="flex flex-row gap-2 items-center">
+        <div class="flex flex-row items-center gap-2">
           <StockBadge :stockStatus="stockStatus" />
           <span v-if="!isOutOfStock" class="text-muted-foreground text-sm"> {{ currentStock }} {{ currentStock === 1 ? "unit" : "units" }} available </span>
         </div>
 
         <div v-if="product.sizes?.length > 0" class="flex flex-col gap-2">
           <label class="text-muted-foreground" for="size">Select your size:</label>
-          <ul id="size" class="flex flex-row gap-2">
+          <ul id="size" class="flex flex-row flex-wrap gap-2">
             <li
               v-for="size in product.sizes"
               :key="size"

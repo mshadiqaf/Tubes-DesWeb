@@ -23,7 +23,7 @@ const alignmentClasses = computed(() => {
 
 <template>
   <div :class="['relative flex flex-col justify-center gap-2', alignmentClasses]">
-    <h2 class="text-primary-500 text-lg tracking-widest uppercase"><slot name="sub-header" /></h2>
-    <h1 class="text-8xl font-normal tracking-tight capitalize"><slot name="header" /></h1>
+    <h2 class="text-primary-500 text-sm tracking-widest uppercase md:text-base"><slot name="sub-header" /></h2>
+    <h1 class="text-6xl font-normal tracking-tight capitalize md:text-7xl lg:text-8xl"><slot name="header" /></h1>
   </div>
 </template>

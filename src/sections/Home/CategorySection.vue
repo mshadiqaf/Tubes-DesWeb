@@ -26,7 +26,7 @@ const categories = [
 
 <template>
   <section class="relative flex w-full flex-col items-center justify-center gap-8 border-t border-black/10 py-24">
-    <div class="relative flex w-full max-w-[1920px] flex-row justify-between gap-4 px-12">
+    <div class="relative flex w-full max-w-[1920px] flex-col lg:flex-row justify-between gap-12 px-12">
       <SectionHeader align="left">
         <template #header>Categories</template>
         <template #sub-header>Belanja Berdasarkan Kebutuhan Kamu</template>

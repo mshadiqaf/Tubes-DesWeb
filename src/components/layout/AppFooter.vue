@@ -7,17 +7,17 @@ const categories = [...new Set(products.map((p) => p.category))];
 <template>
   <footer class="from-secondary-300 to-secondary-700 relative flex w-full justify-center overflow-hidden bg-linear-to-br px-8 py-8">
     <div class="relative flex w-full max-w-7xl flex-col justify-between gap-8">
-      <div class="flex flex-row justify-between gap-8">
+      <div class="flex flex-col justify-between gap-8 md:flex-row">
         <div class="flex max-w-lg flex-col gap-2">
-          <h1 class="text-8xl font-medium tracking-tight text-white">HMIF Store</h1>
-          <p class="text-base w-full font-normal tracking-wide text-wrap text-white">
+          <h1 class="text-4xl font-medium tracking-tight text-white md:text-6xl lg:text-8xl">HMIF Store</h1>
+          <p class="w-full text-base font-normal tracking-wide text-wrap text-white">
             Platform resmi merchandise Himpunan Mahasiswa Informatika ITK. Dikelola oleh Badan Usaha Milik Himpunan (BUMH) untuk mendukung kemandirian dan kegiatan organisasi.
           </p>
         </div>
-        <div class="flex flex-row gap-16">
+        <div class="flex flex-col gap-8 sm:flex-row md:gap-16">
           <div class="relative flex flex-col gap-4">
             <h2 class="flex text-base font-bold text-white uppercase">Belanja</h2>
-            <ul class="flex flex-col gap-1 text-3xl font-normal">
+            <ul class="flex flex-col gap-1 text-lg font-normal md:text-2xl lg:text-3xl">
               <li v-for="category in categories">
                 <RouterLink :to="{ path: '/products', query: { category: category } }" class="text-white transition-colors duration-300 hover:text-white/80">{{ category }}</RouterLink>
               </li>
@@ -25,7 +25,7 @@ const categories = [...new Set(products.map((p) => p.category))];
           </div>
           <div class="relative flex flex-col gap-4">
             <h2 class="flex text-base font-bold text-white uppercase">Menu</h2>
-            <ul class="flex flex-col gap-1 text-3xl font-normal">
+            <ul class="flex flex-col gap-1 text-lg font-normal md:text-2xl lg:text-3xl">
               <li>
                 <RouterLink to="/" class="text-white transition-colors duration-300 hover:text-white/80">Home</RouterLink>
               </li>
@@ -46,11 +46,11 @@ const categories = [...new Set(products.map((p) => p.category))];
         </div>
       </div>
       <div class="flex w-full flex-col items-center justify-center gap-8 border-t border-white/20 pt-8 text-center text-base font-medium text-white uppercase">
-        <div class="flex h-12 w-fit flex-row gap-4">
-          <img class="object-cover" src="/src/assets/images/logo_itk_horizontal.png" alt="Logo ITK" />
-          <img src="/src/assets/images/logo_hmif_itk_white.png" alt="Logo HMIF ITK" />
-          <img src="/src/assets/images/logo_kabinet_impact.png" alt="Logo Kabinet IMPACT" />
-          <img src="/src/assets/images/logo_bumh.png" alt="Logo Badan Usaha Milik Himpunan" />
+        <div class="flex h-8 w-fit flex-row flex-wrap justify-center gap-2 md:h-12 md:gap-4">
+          <img class="h-8 object-contain md:h-12" src="/src/assets/images/logo_itk_horizontal.png" alt="Logo ITK" />
+          <img class="h-8 object-contain md:h-12" src="/src/assets/images/logo_hmif_itk_white.png" alt="Logo HMIF ITK" />
+          <img class="h-8 object-contain md:h-12" src="/src/assets/images/logo_kabinet_impact.png" alt="Logo Kabinet IMPACT" />
+          <img class="h-8 object-contain md:h-12" src="/src/assets/images/logo_bumh.png" alt="Logo Badan Usaha Milik Himpunan" />
         </div>
         <p>
           © 2025 HMIF Store — All Rights Reserved.<br />

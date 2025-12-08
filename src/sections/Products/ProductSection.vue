@@ -72,14 +72,14 @@ onUnmounted(() => {
 <template>
   <section class="relative flex w-full flex-col items-center justify-center">
     <div class="relative flex w-full max-w-[1920px] flex-col justify-center gap-12 p-6 sm:p-8 md:p-12">
-      <div class="relative flex flex-row items-end justify-between gap-4">
-        <div class="relative flex flex-col items-start justify-start gap-6">
-          <h2 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">Shop by Category</h2>
+      <div class="items-center relative flex flex-col justify-center gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div class="relative flex flex-col items-center lg:items-start justify-start gap-6">
+          <h2 class="text-4xl font-medium tracking-tight text-center lg:text-left sm:text-5xl lg:text-6xl">Shop by Category</h2>
           <CategoryTab :active="selectedCategory" @change="handleCategoryChange" />
         </div>
-        <div class="flex flex-col items-end gap-4">
-          <p for="search" class="text-muted-foreground/60 flex w-full flex-row items-center gap-2 text-sm tracking-widest text-nowrap uppercase">
-            <span class="from-muted-foreground/50 to-muted-foreground/0 block h-px w-full bg-linear-to-l" /> Press Ctrl + Shift + F to search
+        <div class="flex flex-col items-center lg:items-end gap-4">
+          <p for="search" class="text-muted-foreground/60 flex flex-row items-center gap-2 text-sm tracking-widest text-nowrap uppercase">
+            <span class="from-muted-foreground/50 to-muted-foreground/0 block h-px w-4 bg-linear-to-l" /> Press Ctrl + Shift + F to search
           </p>
           <SearchBar ref="searchBarRef" :modelValue="searchQuery" @update:modelValue="($event) => (searchQuery = $event)" />
         </div>
