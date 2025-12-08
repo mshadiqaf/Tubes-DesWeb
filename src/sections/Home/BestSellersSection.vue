@@ -3,7 +3,7 @@ import ProductCard from "@/components/shared/ProductCard.vue";
 import SectionHeader from "@/components/ui/SectionHeader.vue";
 import { products } from "@/data/products";
 
-const product = products.slice(0, 1);
+const product = products.slice(0, 3);
 </script>
 
 <template>

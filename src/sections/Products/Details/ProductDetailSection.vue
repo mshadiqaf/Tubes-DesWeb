@@ -1,13 +1,17 @@
 <script setup lang="js">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed, watch } from "vue";
 import { products } from "@/data/products";
 import { toRupiah } from "@/utils/currency.js";
 import BackButton from "@/components/ui/BackButton.vue";
 import AppButton from "@/components/ui/AppButton.vue";
-import { Plus, ShoppingCart } from "lucide-vue-next";
+import { ShoppingCart, ShoppingBag } from "lucide-vue-next";
 import { useCartStore } from "@/store/cart";
+import { useStockStore } from "@/store/stock";
+import QuantityPicker from "@/components/ui/QuantityPicker.vue";
+import StockBadge from "@/components/ui/StockBadge.vue";
 
 const { addItem } = useCartStore();
+const { getStock, getStockStatus } = useStockStore();
 
 const props = defineProps({
   productId: String,
@@ -15,6 +19,30 @@ const props = defineProps({
 
 const product = ref(null);
 const selectedSize = ref(product.value?.sizes?.[0]);
+const quantity = ref(1);
+
+const currentStock = computed(() => {
+  if (!product.value) return 0;
+  return getStock(product.value.id, selectedSize.value);
+});
+
+const stockStatus = computed(() => {
+  if (!product.value) return "out-of-stock";
+  return getStockStatus(product.value.id, selectedSize.value);
+});
+
+const isOutOfStock = computed(() => stockStatus.value === "out-of-stock");
+const isLowStock = computed(() => stockStatus.value === "low-stock");
+
+watch(selectedSize, () => {
+  quantity.value = 1;
+});
+
+watch(currentStock, (newStock) => {
+  if (quantity.value > newStock) {
+    quantity.value = Math.max(1, newStock);
+  }
+});
 
 onMounted(() => {
   product.value = products.find((p) => p.id === parseInt(props.productId));
@@ -24,7 +52,7 @@ onMounted(() => {
 });
 
 const handleAddToCart = () => {
-  if (!product.value) return;
+  if (!product.value || isOutOfStock.value) return;
   const itemToAdd = {
     id: product.value.id,
     name: product.value.name,
@@ -32,9 +60,11 @@ const handleAddToCart = () => {
     image: product.value.imagePath,
     category: product.value.category,
     size: selectedSize.value,
+    quantity: quantity.value,
   };
   addItem(itemToAdd);
-  console.log(`Added ${product.value.name} (${selectedSize.value}) to cart`);
+  console.log(`Added ${quantity.value}x ${product.value.name} (${selectedSize.value}) to cart`);
+  quantity.value = 1;
 };
 
 const handleBuyNow = () => {
@@ -60,6 +90,12 @@ const handleBuyNow = () => {
           </div>
           <p class="text-muted-foreground/75 text-sm font-normal tracking-wide">{{ product.description }}</p>
         </div>
+
+        <div class="flex flex-row gap-2 items-center">
+          <StockBadge :stockStatus="stockStatus" />
+          <span v-if="!isOutOfStock" class="text-muted-foreground text-sm"> {{ currentStock }} {{ currentStock === 1 ? "unit" : "units" }} available </span>
+        </div>
+
         <div v-if="product.sizes?.length > 0" class="flex flex-col gap-2">
           <label class="text-muted-foreground" for="size">Select your size:</label>
           <ul id="size" class="flex flex-row gap-2">
@@ -76,19 +112,26 @@ const handleBuyNow = () => {
             </li>
           </ul>
         </div>
-        <div class="flex flex-col gap-4">
-          <AppButton variant="secondary" size="lg" class="w-full" @click="handleAddToCart">
-            <template #icon>
-              <Plus />
-            </template>
-            Add to Cart
-          </AppButton>
-          <AppButton variant="primary" size="lg" class="w-full gap-3" @click="handleBuyNow">
-            <template #icon>
-              <ShoppingCart size="20" stroke-width="2.5" />
-            </template>
-            Buy Now
-          </AppButton>
+        <div class="flex flex-col gap-6">
+          <div class="flex flex-row items-center gap-2">
+            <label class="text-muted-foreground" for="quantity">Quantity:</label>
+            <QuantityPicker v-model="quantity" :max="currentStock" :disabled="isOutOfStock" />
+            <span v-if="isLowStock && !isOutOfStock" class="text-sm font-medium text-orange-600"> Only {{ currentStock }} left! </span>
+          </div>
+          <div class="flex flex-row gap-3">
+            <AppButton variant="secondary" size="md" class="w-full" @click="handleAddToCart" :disabled="isOutOfStock">
+              <template #icon>
+                <ShoppingCart size="20" stroke-width="2.5" />
+              </template>
+              {{ isOutOfStock ? "Out of Stock" : "Add to Cart" }}
+            </AppButton>
+            <AppButton variant="primary" size="md" class="w-full" @click="handleBuyNow" :disabled="isOutOfStock">
+              <template #icon>
+                <ShoppingBag size="20" stroke-width="2.5" />
+              </template>
+              Buy Now
+            </AppButton>
+          </div>
         </div>
       </div>
     </div>

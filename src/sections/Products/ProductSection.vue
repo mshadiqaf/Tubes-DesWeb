@@ -43,7 +43,6 @@ const filteredProducts = computed(() => {
 
 const handleCategoryChange = (category) => {
   if (category === "All") {
-    // Remove the category query param when "All" is selected
     const query = { ...route.query };
     delete query.category;
     router.push({ query });

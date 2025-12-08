@@ -7,6 +7,14 @@ export const products = [
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
     sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    stockBySizes: {
+      XS: 8,
+      S: 15,
+      M: 20,
+      L: 18,
+      XL: 12,
+      "2XL": 5,
+    },
   },
   {
     id: 2,
@@ -16,6 +24,14 @@ export const products = [
     imagePath: "/src/assets/images/bg_category_apparels.png",
     category: "Apparel",
     sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    stockBySizes: {
+      XS: 10,
+      S: 12,
+      M: 15,
+      L: 15,
+      XL: 10,
+      "2XL": 8,
+    },
   },
   {
     id: 3,
@@ -25,6 +41,13 @@ export const products = [
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
     sizes: ["S", "M", "L", "XL", "2XL"],
+    stockBySizes: {
+      S: 20,
+      M: 25,
+      L: 22,
+      XL: 15,
+      "2XL": 10,
+    },
   },
   {
     id: 4,
@@ -34,6 +57,14 @@ export const products = [
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Apparel",
     sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    stockBySizes: {
+      XS: 5,
+      S: 10,
+      M: 18,
+      L: 16,
+      XL: 12,
+      "2XL": 6,
+    },
   },
   {
     id: 5,
@@ -42,6 +73,7 @@ export const products = [
     price: 30000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Accessories",
+    stock: 50,
   },
   {
     id: 6,
@@ -50,6 +82,7 @@ export const products = [
     price: 35000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Accessories",
+    stock: 45,
   },
   {
     id: 7,
@@ -58,6 +91,7 @@ export const products = [
     price: 40000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Accessories",
+    stock: 30,
   },
   {
     id: 8,
@@ -66,6 +100,7 @@ export const products = [
     price: 25000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Accessories",
+    stock: 60,
   },
   {
     id: 9,
@@ -74,6 +109,7 @@ export const products = [
     price: 100000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Others",
+    stock: 15,
   },
   {
     id: 10,
@@ -82,5 +118,6 @@ export const products = [
     price: 75000,
     imagePath: "/src/assets/images/jahim_depan.png",
     category: "Others",
+    stock: 25,
   },
 ];

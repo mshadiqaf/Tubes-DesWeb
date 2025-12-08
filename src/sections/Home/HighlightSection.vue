@@ -27,7 +27,7 @@ import AppButton from "@/components/ui/AppButton.vue";
         <div>
           <p class="max-w-xl text-2xl text-balance text-black/50">Refined materials. Timeless design. Crafted for comfort, built for pride.</p>
         </div>
-        <AppButton variant="primary" size="xl" href="/products"> Pesan Sekarang </AppButton>
+        <AppButton variant="primary" size="xl" href="/products/1"> Pesan Sekarang </AppButton>
       </div>
     </div>
   </section>

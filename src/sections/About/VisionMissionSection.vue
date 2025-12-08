@@ -4,7 +4,7 @@ import { Eye, Goal } from "lucide-vue-next";
 </script>
 
 <template>
-  <section class="relative flex w-full flex-col items-center justify-center p-24">
+  <section class="relative flex w-full flex-col items-center justify-center p-12">
     <div class="relative flex w-full max-w-[1920px] flex-col">
       <span class="bg-muted-foreground/25 w-full border-t mask-x-from-95% mask-x-to-100%" />
       <div class="grid grow grid-cols-2">

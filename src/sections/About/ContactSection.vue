@@ -1,10 +1,14 @@
+<script setup>
+import SectionHeader from "@/components/ui/SectionHeader.vue";
+</script>
+
 <template>
   <section class="relative flex justify-center bg-white">
     <div class="flex flex-col gap-12 px-6 py-12">
-      <div class="flex flex-col items-center justify-center">
-        <h4 class="text-primary-600 text-lg tracking-widest">HUBUNGI KAMI</h4>
-        <h1 class="text-7xl font-medium tracking-tight">Our Contacts</h1>
-      </div>
+      <SectionHeader>
+        <template #header>Kontak Kami</template>
+        <template #sub-header>Hubungi Kami</template>
+      </SectionHeader>
 
       <div class="mt-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <div class="flex flex-col items-center justify-center text-center">

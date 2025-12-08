@@ -7,19 +7,19 @@ const categories = [
     name: "Apparels",
     description: "Jahim, PDH, Kaos Inforce",
     image_url: "/src/assets/images/bg_category_apparels.png",
-    to: "/products",
+    to: "/products?category=Apparel",
   },
   {
     name: "Accessories",
     description: "Lanyard, Keychain, Stiker, Pin",
     image_url: "/src/assets/images/bg_category_accessories.png",
-    to: "/products",
+    to: "/products?category=Accessories",
   },
   {
     name: "Others",
     description: "Standing Banner, Bouquet",
     image_url: "/src/assets/images/bg_category_others.png",
-    to: "/products",
+    to: "/products?category=Others",
   },
 ];
 </script>

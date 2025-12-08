@@ -1,12 +1,15 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { X, Minus, Plus, Trash2, ShoppingBag, PackageX, ArrowRight } from "lucide-vue-next";
+import { X, Trash2, ShoppingBag, PackageX, ArrowRight } from "lucide-vue-next";
 import AppButton from "../ui/AppButton.vue";
 import { toRupiah } from "@/utils/currency";
 import { useCartStore } from "@/store/cart";
+import { useStockStore } from "@/store/stock";
+import QuantityPicker from "../ui/QuantityPicker.vue";
 
 const { cart, totalItems, totalPrice, removeItem, incrementItem, decrementItem } = useCartStore();
+const { getStock } = useStockStore();
 
 const dialogRef = ref(null);
 
@@ -29,6 +32,18 @@ const router = useRouter();
 const handleEmptyCartAction = () => {
   closeDialog();
   router.push({ name: "ProductPage" });
+};
+
+const getAvailableStock = (item) => {
+  return getStock(item.id, item.size);
+};
+
+const handleIncrement = (item) => {
+  incrementItem(item);
+};
+
+const handleDecrement = (item) => {
+  decrementItem(item);
 };
 </script>
 
@@ -60,30 +75,14 @@ const handleEmptyCartAction = () => {
               <div class="flex w-full flex-col">
                 <h2 class="line-clamp-1 text-xl font-medium">{{ item.name }}</h2>
                 <h4 class="text-muted-foreground text-sm tracking-wider">Size: {{ item.size }}</h4>
+                <span class="text-muted-foreground/75 text-xs">{{ getAvailableStock(item) }} available in stock</span>
               </div>
               <button @click="removeItem(item)" class="text-muted-foreground/50 flex h-fit cursor-pointer items-center justify-center p-0.5 transition-colors duration-300 hover:text-red-500">
                 <Trash2 size="20" />
               </button>
             </div>
             <div class="flex flex-row items-center justify-between">
-              <div class="flex h-fit w-fit flex-row">
-                <button
-                  @click="decrementItem(item)"
-                  :disabled="item.quantity <= 1"
-                  class="text-muted-foreground disabled:hover:text-muted-foreground flex aspect-square size-8 cursor-pointer items-center justify-center border p-0.5 transition-colors duration-300 hover:text-red-500 disabled:opacity-50"
-                >
-                  <Minus size="20" />
-                </button>
-                <input
-                  type="number"
-                  class="w-12 [appearance:textfield] justify-self-center border-y text-center text-lg font-medium focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                  v-model="item.quantity"
-                  min="1"
-                />
-                <button @click="incrementItem(item)" class="text-muted-foreground flex aspect-square size-8 cursor-pointer items-center justify-center border p-0.5 transition-colors duration-300 hover:text-red-500">
-                  <Plus size="20" />
-                </button>
-              </div>
+              <QuantityPicker :modelValue="item.quantity" @increment="handleIncrement(item)" @decrement="handleDecrement(item)" :max="getAvailableStock(item) + item.quantity" />
               <p class="text-muted-foreground text-base">{{ toRupiah(item.price * item.quantity) }}</p>
             </div>
           </div>

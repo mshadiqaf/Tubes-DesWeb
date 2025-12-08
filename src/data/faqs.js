@@ -1,7 +1,7 @@
 export const faqs = [
   {
     title: "General FAQs",
-    description: "Lorem Ipsum",
+    description: "This is the general FAQs section.",
     items: [
       {
         question: "Is there a free trial available?",
@@ -31,7 +31,7 @@ export const faqs = [
   },
   {
     title: "Billing FAQs",
-    description: "Lorem Ipsum",
+    description: "This is the billing FAQs section.",
     items: [
       {
         question: "Is it a one-time payment?",
