@@ -2,6 +2,7 @@
 import { RouterView } from "vue-router";
 import AppHeader from "./components/layout/AppHeader.vue";
 import AppFooter from "./components/layout/AppFooter.vue";
+import AppToast from "./components/ui/AppToast.vue";
 import CartDialog from "./components/layout/CartDialog.vue";
 import { ref } from "vue";
 
@@ -11,6 +12,7 @@ const showDialog = () => dialogTarget.value?.show();
 
 <template>
   <div class="flex min-h-screen flex-col">
+    <AppToast />
     <AppHeader @show-dialog="showDialog" />
     <CartDialog ref="dialogTarget" />
 

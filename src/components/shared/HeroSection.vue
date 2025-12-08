@@ -13,7 +13,7 @@ const props = defineProps({
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: `url(${props.image})` }"></div>
     <div class="absolute inset-0 bg-black/75" />
     <div class="flex w-full justify-center px-8">
-      <h1 class="relative text-[3.5dvh] font-normal tracking-[24px] text-white uppercase italic">
+      <h1 class="relative text-[3.5dvh] font-normal tracking-[24px] text-white text-shadow-[0_0_32px] text-shadow-white uppercase italic">
         <slot />
       </h1>
     </div>

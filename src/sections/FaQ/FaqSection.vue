@@ -20,10 +20,10 @@ const toggle = (sec, idx) => {
           <button class="flex w-full items-center justify-between py-2 text-left cursor-pointer" @click="toggle(secIndex, idx)">
             <span class="text-lg font-medium">{{ item.question }}</span>
 
-            <span class="transition-transform duration-500 ease-in-out" :class="openIndex[`${secIndex}-${idx}`] ? 'rotate-180' : 'rotate-0'"> ▼ </span>
+            <span class="transition-transform duration-500 ease-in-out!" :class="openIndex[`${secIndex}-${idx}`] ? 'rotate-180' : 'rotate-0'"> ▼ </span>
           </button>
 
-          <div class="overflow-hidden transition-all duration-500 ease-in-out" :class="openIndex[`${secIndex}-${idx}`] ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'">
+          <div class="overflow-hidden transition-all duration-500 ease-in-out!" :class="openIndex[`${secIndex}-${idx}`] ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'">
             <p class="py-2 text-gray-600">
               {{ item.answer }}
             </p>

@@ -1,16 +1,15 @@
 <script setup>
-import { ref } from "vue";
 import { ShoppingCart } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
-import CartDialog from "@/components/layout/CartDialog.vue";
+import { useCartStore } from "@/store/cart";
 
-const emit = defineEmits(['show-dialog']);
-const showDialog = () => emit('show-dialog');
-
+const { cart, totalItems } = useCartStore();
+const emit = defineEmits(["show-dialog"]);
+const showDialog = () => emit("show-dialog");
 </script>
 
 <template>
-  <header class="fixed z-9999 flex w-full border-b border-white/10 bg-[#f5f5f5]/50 backdrop-blur-sm">
+  <header class="fixed z-999 flex w-full border-b border-white/10 bg-[#f5f5f5]/50 backdrop-blur-sm">
     <nav class="flex w-full justify-center">
       <div class="flex w-full flex-row items-center justify-between px-8">
         <RouterLink to="/">
@@ -34,7 +33,8 @@ const showDialog = () => emit('show-dialog');
           </li>
         </ul>
         <div>
-          <button @click="showDialog" class="flex cursor-pointer items-center justify-center">
+          <button @click="showDialog" class="relative flex cursor-pointer items-center justify-center">
+            <span v-if="cart.length > 0" class="bg-primary-500 absolute -top-1 -right-1 flex size-4.5 items-center justify-center rounded-full text-sm text-white">{{ totalItems }}</span>
             <ShoppingCart :size="32" />
           </button>
         </div>

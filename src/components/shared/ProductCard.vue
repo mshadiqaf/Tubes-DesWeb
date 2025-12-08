@@ -2,6 +2,7 @@
 import { toRupiah } from "@/utils/currency.js";
 import { Star, Plus } from "lucide-vue-next";
 import CategoryBadge from "../ui/CategoryBadge.vue";
+import { useCartStore } from "@/store/cart";
 
 const props = defineProps({
   id: {
@@ -33,7 +34,18 @@ const props = defineProps({
   },
 });
 
+const { addItem } = useCartStore();
+
 const handleAddToCart = (size) => {
+  const itemToAdd = {
+    id: props.id,
+    name: props.name,
+    price: props.price,
+    image: props.imagePath,
+    category: props.category,
+    size: size,
+  };
+  addItem(itemToAdd);
   console.log(`Added ${props.name} (${size}) to cart`);
 };
 </script>
@@ -49,7 +61,7 @@ const handleAddToCart = (size) => {
           <ul w class="relative flex flex-row gap-8">
             <li
               v-for="size in sizes"
-              @click="handleAddToCart(size)"
+              @click.prevent.stop="handleAddToCart(size)"
               :key="size"
               class="cursor-pointer rounded-md text-lg font-medium opacity-75 transition-all duration-300 select-none hover:underline hover:opacity-100"
               :title="`Add ${size} to cart`"
@@ -58,8 +70,10 @@ const handleAddToCart = (size) => {
             </li>
           </ul>
         </div>
-        <Star size="32" stroke-width="1.5" class="text-muted-foreground/50 hover:fill-muted-foreground/15 absolute top-4 right-4 transition-colors duration-500 ease-in-out active:fill-yellow-300" />
-        <Plus :class="['text-muted-foreground border-muted-foreground absolute bottom-4 left-4 cursor-pointer rounded-sm transition-all duration-300 hover:scale-130', sizes ? 'group-hover/size:opacity-0' : 'opacity-100']" />
+        <Plus
+          @click.prevent.stop="handleAddToCart(props.sizes?.[0])"
+          :class="['text-muted-foreground border-muted-foreground absolute bottom-4 left-4 cursor-pointer rounded-sm transition-all duration-300 hover:scale-130', sizes ? 'group-hover/size:opacity-0' : 'opacity-100']"
+        />
         <CategoryBadge :category="props.category" class="absolute top-4 left-4" />
         <img class="max-h-full max-w-full object-contain drop-shadow-xl transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-105 group-hover:drop-shadow-2xl" :src="props.imagePath" alt="" />
       </div>
