@@ -36,3 +36,26 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### DOKUMENTASI COTS
+
+BRANCH BARU DI -> cots
+
+List File Terlibat :
+- components/layout
+  -> AppHeader.vue
+  -> CartDialog.vue
+- pages
+  -> COTSPage.vue
+- router
+  -> index.js
+- sections/COTS
+  -> HeroSection.vue
+  -> SkillSection.vue
+
+Route Halaman Baru
+-> {
+    path: "/cots",
+    name: "COTSPage",
+    component: COTSPage,
+  }
