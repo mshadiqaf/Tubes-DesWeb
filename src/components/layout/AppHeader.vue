@@ -40,6 +40,9 @@ const toggleMobileMenu = () => {
           <li class="p-3">
             <RouterLink to="/about" class="hover:text-primary-500 font-normal transition-all duration-300 hover:tracking-wider">About Us</RouterLink>
           </li>
+          <li class="p-3">
+            <RouterLink to="/cots" class="hover:text-primary-500 font-normal transition-all duration-300 hover:tracking-wider">COTS</RouterLink>
+          </li>
         </ul>
 
         <!-- Right side: Cart + Mobile Menu Button -->

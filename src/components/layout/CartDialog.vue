@@ -50,7 +50,7 @@ const handleDecrement = (item) => {
 <template>
   <dialog
     ref="dialogRef"
-    class="m-auto h-fit w-full max-w-full self-center justify-self-center overflow-hidden rounded-none border bg-white shadow-xl backdrop:bg-black/50 backdrop:backdrop-blur-[2px] md:max-w-lg md:rounded-4xl"
+    class="m-auto h-fit w-full max-w-sm self-center justify-self-center overflow-hidden rounded-4xl border bg-white shadow-xl backdrop:bg-black/50 backdrop:backdrop-blur-[2px] md:max-w-md lg:max-w-lg"
     @click="closeFromEvent"
   >
     <div class="flex flex-col">

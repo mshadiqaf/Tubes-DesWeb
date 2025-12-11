@@ -1,4 +1,5 @@
 import AboutPage from "@/pages/AboutPage.vue";
+import COTSPage from "@/pages/COTSPage.vue";
 import FaqPage from "@/pages/FaqPage.vue";
 import HomePage from "@/pages/HomePage.vue";
 import ProductDetailPage from "@/pages/ProductDetailPage.vue";
@@ -44,6 +45,11 @@ const routes = [
     component: AboutPage,
     meta: { label: "About Us" },
   },
+  {
+    path: "/cots",
+    name: "COTSPage",
+    component: COTSPage,
+  }
 ];
 
 export const router = createRouter({
