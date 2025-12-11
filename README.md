@@ -40,6 +40,8 @@ npm run build
 
 ### DOKUMENTASI COTS
 
+BRANCH BARU DI -> cots
+
 List File Terlibat :
 - components/layout
   -> AppHeader.vue
