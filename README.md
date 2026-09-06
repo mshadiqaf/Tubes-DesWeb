@@ -1,61 +1,59 @@
-# tubes-desweb-vite
+<p align="center">
+  <img src="src/assets/images/logo_hmif_store.png" width="110" alt="HMIF Store Logo" />
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+# HMIF Store Web
 
-## Recommended IDE Setup
+![Vue 3](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Build-Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS%20v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Platform katalog e-commerce web untuk pemesanan merchandise resmi Himpunan Mahasiswa Informatika (HMIF) ITK, seperti Jaket Himpunan (Jahim), apparel, dan aksesori organisasi.
 
-## Recommended Browser Setup
+---
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Fitur Utama
 
-## Customize configuration
+- **Katalog Produk Interaktif**: Menampilkan daftar produk merchandise resmi, lengkap dengan detail harga, deskripsi, dan variasi ukuran (XS hingga 2XL).
+- **Manajemen Keranjang Belanja Dinamis**: Pengelolaan item keranjang berbasis state reaktif (menambah, mengubah ukuran, menghapus, serta kalkulasi total item secara instan).
+- **Halaman Informasi Lengkap**: Halaman About Us, FAQ interaktif, dan Testimonial pelanggan.
+- **Desain Responsif**: Antarmuka bersih yang menyesuaikan secara fleksibel di layar ponsel maupun desktop, didukung navigasi drawer mobile.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## Tech Stack
 
-```sh
-npm install
-```
+- **Frontend Framework**: Vue 3 (Composition API, `<script setup>`)
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS v4, `@toolwind/corner-shape`
+- **Ikonografi**: Lucide Vue Next
+- **Routing**: Vue Router
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
+## Cara Menjalankan Secara Lokal
 
-### Compile and Minify for Production
+### Prasyarat
+- Node.js versi 20.19.0 atau >= 22.12.0
+- npm atau pnpm
 
-```sh
-npm run build
-```
+### Langkah Instalasi
+1. Clone repositori:
+   ```bash
+   git clone https://github.com/mshadiqaf/hmif-store-web.git
+   cd hmif-store-web
+   ```
+2. Pasang dependensi:
+   ```bash
+   npm install
+   ```
+3. Jalankan development server:
+   ```bash
+   npm run dev
+   ```
+4. Buka browser pada alamat `http://localhost:5173`.
 
-### DOKUMENTASI COTS
+---
 
-BRANCH BARU DI -> cots
-
-List File Terlibat :
-- components/layout
-  -> AppHeader.vue
-  -> CartDialog.vue
-- pages
-  -> COTSPage.vue
-- router
-  -> index.js
-- sections/COTS
-  -> HeroSection.vue
-  -> SkillSection.vue
-
-Route Halaman Baru
--> {
-    path: "/cots",
-    name: "COTSPage",
-    component: COTSPage,
-  }
+## Konteks Akademik
+Proyek ini dikembangkan sebagai Tugas Besar mata kuliah Desain Web, Program Studi Informatika, Institut Teknologi Kalimantan.
